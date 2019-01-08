@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SQFLite test',
+      title: 'Criminal Code of Canada',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyHomePage(title: 'SQFLite test Home Page'),
+      home: MyHomePage(title: 'Flutter Criminal Code'),
     );
   }
 }
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: new Container(
-        padding: new EdgeInsets.all(16.0),
+        padding: new EdgeInsets.all(0.0),
         child: new FutureBuilder<List<Entry>>(
           future: fetchEntriesFromDatabase(),
           builder: (context, snapshot) {
@@ -72,8 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         return new Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              new DisplayCard(snapshot.data[index].id, snapshot.data[index].fulltext, snapshot.data[index].type, snapshot.data[index].section, snapshot.data[index].pinpoint),
-                              new Divider()
+                              new DisplayCard(snapshot.data[index].id, snapshot.data[index].fulltext, snapshot.data[index].type, snapshot.data[index].section, 
+                              snapshot.data[index].pinpoint)
                             ]);
                       }));
             } else if (snapshot.data.length == 0) {
