@@ -38,7 +38,7 @@ class DisplayCard extends StatelessWidget {
       // Section MarginalNote
       case "1":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -59,7 +59,7 @@ class DisplayCard extends StatelessWidget {
       // Section Text
       case "2":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -90,7 +90,7 @@ class DisplayCard extends StatelessWidget {
         }
 
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -112,7 +112,7 @@ class DisplayCard extends StatelessWidget {
       // Section Paragraph
       case "4":
         return Container(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -134,7 +134,7 @@ class DisplayCard extends StatelessWidget {
       // Subsection SubmarginalNote
       case "5":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -155,7 +155,7 @@ class DisplayCard extends StatelessWidget {
       // Subsection paragraph
       case "6":
         return Container(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -177,7 +177,7 @@ class DisplayCard extends StatelessWidget {
       // Subparagraph
       case "7":
         return Container(
-            padding: const EdgeInsets.only(left: 44.0),
+            padding: const EdgeInsets.only(left: 44.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -199,7 +199,7 @@ class DisplayCard extends StatelessWidget {
       // Subsection subParagraph
       case "8":
         return Container(
-            padding: const EdgeInsets.only(left: 44.0),
+            padding: const EdgeInsets.only(left: 44.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -221,7 +221,7 @@ class DisplayCard extends StatelessWidget {
       // HistoricalNote
       case "9":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -242,7 +242,7 @@ class DisplayCard extends StatelessWidget {
       // Definition english name
       case "10":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -265,7 +265,7 @@ class DisplayCard extends StatelessWidget {
       // Definition MarginalNote
       case "11":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -284,7 +284,7 @@ class DisplayCard extends StatelessWidget {
       // Section Paragraph
       case "12":
         return Container(
-            padding: const EdgeInsets.only(left: 16.0),
+            padding: const EdgeInsets.only(left: 16.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -303,7 +303,7 @@ class DisplayCard extends StatelessWidget {
       // Continued Subsection Paragraph Text
       case "13":
         return Container(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -322,7 +322,7 @@ class DisplayCard extends StatelessWidget {
       // Continued Subsection Text
       case "14":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -341,7 +341,7 @@ class DisplayCard extends StatelessWidget {
       // Subparagraph Clause
       case "15":
         return Container(
-            padding: const EdgeInsets.only(left: 68.0),
+            padding: const EdgeInsets.only(left: 68.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -363,7 +363,8 @@ class DisplayCard extends StatelessWidget {
       // Formula Term Text
       case "16":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            color: Colors.green,
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -384,7 +385,7 @@ class DisplayCard extends StatelessWidget {
       // Subclause
       case "17":
         return Container(
-            padding: const EdgeInsets.only(left: 92.0),
+            padding: const EdgeInsets.only(left: 92.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -406,7 +407,8 @@ class DisplayCard extends StatelessWidget {
       // Continued Subsection Subparagraph
       case "18":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            color: Colors.green,
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -427,7 +429,8 @@ class DisplayCard extends StatelessWidget {
       // Sub Sub Clause
       case "19":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            color: Colors.green,
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -451,7 +454,8 @@ class DisplayCard extends StatelessWidget {
       // Continued Clause
       case "20":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            color: Colors.green,
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -472,7 +476,8 @@ class DisplayCard extends StatelessWidget {
       // Continued Subclause
       case "21":
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            color: Colors.green,
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -492,7 +497,8 @@ class DisplayCard extends StatelessWidget {
 
       default:
         return Container(
-            padding: const EdgeInsets.only(left: 2.0),
+            color: Colors.orange,
+            padding: const EdgeInsets.only(left: 2.0, top: 2.0, bottom: 2.0),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

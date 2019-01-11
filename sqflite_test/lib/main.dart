@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import './components/display_card.dart';
+import './components/search_bar.dart';
 
 import './database/database.dart';
-
 import './database/model/entry.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +14,12 @@ Future<List<Entry>> fetchEntriesFromDatabase() async {
   return entries;
 }
 
+Future<List<Entry>> queryDatabase() async {
+  var dbHelper = DBHelper();
+  Future<List<Entry>> entries = dbHelper.getQueryResults("crime");
+  return entries;
+}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -21,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Criminal Code of Canada',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blueGrey,
       ),
       home: MyHomePage(title: 'Flutter Criminal Code'),
     );
@@ -59,32 +65,41 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: new Container(
-        padding: new EdgeInsets.all(0.0),
-        child: new FutureBuilder<List<Entry>>(
-          future: fetchEntriesFromDatabase(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return new Scrollbar(
-                  child: new ListView.builder(
-                      itemCount: snapshot.data.length,
-                      itemBuilder: (context, index) {
-                        return new Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              new DisplayCard(snapshot.data[index].id, snapshot.data[index].fulltext, snapshot.data[index].type, snapshot.data[index].section, 
-                              snapshot.data[index].pinpoint)
-                            ]);
-                      }));
-            } else if (snapshot.data.length == 0) {
-              return new Text("No Data found");
-            }
-            return new Container(
-              alignment: AlignmentDirectional.center,
-              child: new CircularProgressIndicator(),
-            );
-          },
-        ),
+      body: new Column(
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          new SearchBar(),
+          new Container(
+            child: new FutureBuilder<List<Entry>>(
+              future: fetchEntriesFromDatabase(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return new Expanded(                    
+                      child: new ListView.builder(
+                          itemCount: snapshot.data.length,
+                          itemBuilder: (context, index) {
+                            return new Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  new DisplayCard(
+                                      snapshot.data[index].id,
+                                      snapshot.data[index].fulltext,
+                                      snapshot.data[index].type,
+                                      snapshot.data[index].section,
+                                      snapshot.data[index].pinpoint)
+                                ]);
+                          }));
+                } else if (snapshot.data.length == 0) {
+                  return new Text("No Data found");
+                }
+                return new Container(
+                  alignment: AlignmentDirectional.center,
+                  child: new CircularProgressIndicator(),
+                );
+              },
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _initSQL,

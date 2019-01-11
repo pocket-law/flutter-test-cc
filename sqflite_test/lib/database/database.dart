@@ -62,5 +62,18 @@ class DBHelper {
     return allEntries;
   }
 
+  Future<List<Entry>> getQueryResults(String searchTerms) async {
+    var dbClient = await db;
+    List<Map> list = await dbClient.rawQuery('SELECT * FROM c46 WHERE fulltext LIKE "%' + searchTerms +'%"');
+    List<Entry> queryResults = new List();
+
+    for (int i = 0; i < list.length; i++) {
+      queryResults.add(new Entry(list[i]["id"], list[i]["fulltext"], list[i]["type"], list[i]["section"], list[i]["pinpoint"]));
+    }
+    print(queryResults.length);
+
+    return queryResults;
+  }
+
 
 }
